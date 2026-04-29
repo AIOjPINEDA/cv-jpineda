@@ -1,0 +1,922 @@
+---
+const pageTitle = 'Jaime Pineda Moreno | CTO Cofounder · Senda Health';
+const pageDescription =
+  'CV formal de Jaime Pineda Moreno para CTO Cofounder en Senda Health: medicina clínica, clinical AI, interoperabilidad sanitaria e infraestructura digital para medicina personalizada.';
+
+const navItems = [
+  { href: '#perfil', label: 'Perfil' },
+  { href: '#senda', label: 'Senda Health' },
+  { href: '#experiencia', label: 'Experiencia' },
+  { href: '#proyectos', label: 'Proyectos' },
+  { href: '#capacidades', label: 'Capacidades' },
+  { href: '#formacion', label: 'Formación' },
+];
+
+const valueItems = [
+  {
+    title: 'Producto clínico que escala',
+    text: 'Convertir protocolos de obesidad, seguimiento crónico y adherencia en workflows digitales medibles y usables por equipos clínicos.',
+  },
+  {
+    title: 'Capa de datos longitudinal',
+    text: 'Diseñar la base clínica para analíticas, tratamientos farmacológicos, respuesta terapéutica, eventos y outcomes, preparada para fenotipado y personalización.',
+  },
+  {
+    title: 'IA responsable y operativa',
+    text: 'Integrar LLMs, RAG, agentes y modelos predictivos con supervisión médica, evaluación semántica y trazabilidad clínica.',
+  },
+  {
+    title: 'Interoperabilidad con visión EHDS',
+    text: 'Diseñar desde el inicio una capa clínica-data alineada con el European Health Data Space: acceso y control del paciente, datos longitudinales interoperables, trazabilidad/auditoría y preparación para uso primario y secundario seguro de datos.',
+  },
+  {
+    title: 'Liderazgo técnico-producto',
+    text: 'Dirigir equipo de desarrollo tercerizado, revisar decisiones arquitectónicas críticas, priorizar trade-offs y contratar especialistas donde haga falta.',
+  },
+];
+
+const roles = [
+  {
+    company: 'Artificial Intelligence Orchestrator',
+    role: 'AI/ML Scientific Computing Engineer',
+    meta: 'Remoto, Miami FL · Jun 2023 – Actualidad · Part-time',
+    body:
+      'Desarrollo modelos predictivos sobre biomarcadores PPG/ECG con Python, scikit-learn, PySpark y procesamiento de señales fisiológicas. Diseño y mantengo pipelines ETL/ELT para datasets clínicos multi-fuente: MIMIC-IV, VITALDB, RWD, señales fisiológicas y datos de biobancos.',
+    bullets: [
+      'Integridad semántica y terminologías clínicas: SNOMED-CT, ICD-10/11, LOINC, FHIR y OMOP.',
+      'Pipeline end-to-end de ETL y benchmarking para PulseDB, reduciendo error interno hasta un 12%.',
+      'Gold-standard con más de 2.400 etiquetas manuales y herramienta Streamlit que redujo el tiempo de anotación en un 67%.',
+      'Servidor FHIR on-premise y base OMOP v5.4 con scripts de Infrastructure-as-Code.',
+    ],
+    tags: ['Python', 'PySpark', 'PPG/ECG', 'FHIR', 'OMOP', 'RWD', 'IaC'],
+  },
+  {
+    company: 'Rizoma Health',
+    role: 'Founder',
+    meta: 'Madrid · Dic 2022 – Jun 2023',
+    body:
+      'Fundé y conceptualicé una solución healthtech TRL-2 de interoperabilidad clínica basada en HL7 FHIR y arquitectura lakehouse, con una capa de mapeo mediante LLMs para transformar notas clínicas no estructuradas en recursos FHIR validados.',
+    bullets: [
+      'Blueprints técnicos, regulatorios y de seguridad: validación, trazabilidad, control de calidad y uso responsable de datos clínicos.',
+      'Liderazgo de equipo transversal de seis personas en producto, discovery de mercado y análisis regulatorio.',
+      'Cartas de intención de dos clínicas privadas antes de pausar el proyecto por falta de financiación.',
+    ],
+    tags: ['Founder', 'Healthtech', 'FHIR', 'Lakehouse', 'LLMs'],
+  },
+  {
+    company: 'Kairos Health',
+    role: 'Cofounder',
+    meta: 'Madrid · Jun 2021 – Actualidad',
+    body:
+      'Co-conceptualicé un programa de medicina de longevidad centrado en optimización metabólica, composición corporal, salud cardiovascular y función cognitiva en pacientes con enfermedad crónica y sobrepeso.',
+    bullets: [
+      'Modelo de personalización terapéutica con analítica metabólica, test genómicos, nutrición, entrenamiento progresivo y wearables.',
+      'Planes asistenciales centrados en adherencia, cambio conductual y monitorización continua.',
+    ],
+    tags: ['Obesidad', 'Enfermedad crónica', 'Wearables', 'Adherencia', 'Medicina longitudinal'],
+  },
+  {
+    company: 'Preversalud SL',
+    role: 'Chief Information Officer',
+    meta: 'Madrid · Nov 2022 – Jul 2023',
+    body:
+      'Lideré migración desde sistema legacy a ClinicCloud y Dr iCloud de más de 300 historias clínicas, adjuntos y datos de facturación, con cero pérdida de información y cut-over en un día.',
+    bullets: [
+      'Automatización de agendas, turnos y touchpoints operativos vía API de Dr iCloud, reduciendo en torno a un 40% la carga manual.',
+      'Asistente de documentación clínica con GPT-3.5 para formato SOAP, diferenciales e interacciones farmacológicas potenciales.',
+      'Reducción del 30% en tiempo medio de documentación y mejora de completitud de campos clave del 68% al 90%.',
+    ],
+    tags: ['ClinicCloud', 'Dr iCloud', 'GPT-3.5', 'SOAP', 'Automatización'],
+  },
+  {
+    company: 'HM Hospitales',
+    role: 'Médico de Urgencias',
+    meta: 'Madrid · Ago 2025 – Actualidad',
+    body:
+      'Asistencia en urgencias de adultos en HM Montepríncipe y HM Torrelodones. Gestión clínica en entornos de alta presión: priorización, estabilización y coordinación con UCI, cirugía y hospitalización.',
+    bullets: [
+      'Visibilidad directa de workflows asistenciales, puntos de fricción operativa, seguridad del paciente y necesidades reales de equipos clínicos.',
+    ],
+    tags: ['Urgencias', 'Seguridad del paciente', 'Workflows clínicos', 'Operación hospitalaria'],
+  },
+  {
+    company: 'Universidad UNIE',
+    role: 'Adjunct Lecturer',
+    meta: 'Madrid · Oct 2025 – Actualidad · Part-time',
+    body:
+      'Imparto el módulo “Ciencia de Datos aplicada a los Negocios” en el Máster Universitario en Analítica de Negocio: Python, visualización, fundamentos de ML y Docker.',
+    bullets: [
+      'Capacidad probada de traducir conceptos técnicos a audiencias no técnicas, útil para alinear equipo clínico, inversores y desarrollo en una compañía healthtech.',
+    ],
+    tags: ['Docencia', 'Python', 'Machine Learning', 'Docker', 'Business analytics'],
+  },
+];
+
+const projects = [
+  {
+    title: 'EDxPlain',
+    badge: '1.er puesto · GenAI Health Hack 2026',
+    text:
+      'Sistema de IA que transforma informes de alta de urgencias en guías personalizadas y comprensibles para pacientes. Presentado en 4YFN / MWC Barcelona 2026.',
+    bullets: [
+      'Arquitectura multiagente en AWS Bedrock con Claude Sonnet y RAG sobre protocolos clínicos institucionales.',
+      'Salida estructurada en diagnóstico, procedimientos, cuidados, medicación, signos de alarma, seguimiento e indicadores de confianza.',
+      'Pipeline de evaluación con 4 jueces LLM para cobertura, fidelidad, valores críticos y completitud.',
+      'Validación de legibilidad, supervisión médico-en-el-circuito y sensibilidad EU AI Act, GDPR y seguridad clínica.',
+    ],
+    tags: ['AWS Bedrock', 'Claude', 'RAG', 'LLM-as-judge', 'Clinical safety'],
+  },
+  {
+    title: 'PatAInt',
+    badge: '1.er puesto · NOVA Talent Hackathon 2024',
+    text:
+      'Demo de inteligencia médica para monitorización cardiovascular remota: biomarcadores multifuente, wearables, alertas en tiempo real, historia clínica compatible con FHIR/HL7 e integración mediante API REST.',
+  },
+  {
+    title: 'Ethical Protocol Evaluator',
+    badge: 'GenAI Health Hackathon 2024',
+    text:
+      'Solución LLM en AWS Bedrock para apoyar a comités de ética en la revisión de protocolos científicos y consentimientos informados, con prompting dinámico y generación de observaciones accionables.',
+  },
+  {
+    title: 'Voice Automation for Cruz Roja',
+    badge: 'Hackathon for Good / AWS Iberia 2024',
+    text: 'Sistema de voz sobre AWS Bedrock para automatizar la entrada manual de datos en operaciones humanitarias.',
+  },
+];
+
+const capabilities = [
+  ['Estrategia y founder', 'Roadmap AI-first, due-diligence técnica, comunicación con inversores, hiring técnico, dirección de equipo tercerizado y priorización producto/negocio.'],
+  ['Producto clínico', 'Traducción clínica-producto, diseño de workflows asistenciales, priorización por impacto clínico y validación con equipos médicos.'],
+  ['Data / IA', 'Python, PySpark, SQL, pandas, NumPy, scikit-learn, modelos predictivos PPG/ECG, ETL/ELT, RWD, benchmarking y feature engineering.'],
+  ['LLMs y agentes en salud', 'Anthropic Claude, OpenAI, Gemini, AWS Bedrock, RAG, agentes multi-paso, LLM-as-judge, prompt engineering, MCP y automatización de workflows clínicos.'],
+  ['Interoperabilidad', 'HL7/FHIR R5, OMOP v5.4, openEHR, SNOMED-CT, ICD-10/11, LOINC, documentación estructurada, datos longitudinales y diseño alineado con la dirección EHDS/EEHRxF.'],
+  ['Arquitectura y seguridad', 'Privacy-by-design, security-by-design, GDPR/LOPDGDD, IAM, control de accesos, auditoría, trazabilidad, segregación de entornos, AWS, Docker, Postgres e IaC.'],
+  ['Clínica', 'Urgencias, priorización y seguridad del paciente, medicina de longevidad y enfermedad crónica, seguimiento longitudinal, wearables y adherencia.'],
+];
+
+const education = [
+  'openEHR Development Bootcamp — Medblocks, 2025.',
+  'Mastery of Advanced Artificial Intelligence in Healthcare — EIT Health, 2023.',
+  'Data Science Bootcamp — IE University, Madrid, 2022.',
+  'HelloAI Professional RIS: AI Technologies in Healthcare — EIT Health, 2022.',
+  'Medicina (MD) — Universidad Cooperativa de Colombia, Medellín, 2016.',
+];
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={pageDescription} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <title>{pageTitle}</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f6f1e8;
+        --paper: #fffdf8;
+        --paper-soft: #faf6ee;
+        --ink: #17212b;
+        --text: #2b3742;
+        --muted: #697581;
+        --line: #ded6ca;
+        --line-soft: #eee7dc;
+        --accent: #1f6f73;
+        --accent-dark: #164f53;
+        --accent-soft: #e5f1ee;
+        --gold: #967842;
+        --shadow: 0 24px 70px rgba(40, 48, 57, 0.11);
+        --max: 1120px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        background: var(--bg);
+      }
+
+      body {
+        margin: 0;
+        color: var(--text);
+        background:
+          radial-gradient(circle at 8% 0%, rgba(31, 111, 115, 0.11), transparent 27rem),
+          radial-gradient(circle at 92% 2%, rgba(150, 120, 66, 0.1), transparent 25rem),
+          linear-gradient(180deg, #fbf8f2 0%, var(--bg) 48%, #efe8dc 100%);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.58;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .shell {
+        width: min(var(--max), calc(100% - 32px));
+        margin: 28px auto 60px;
+        overflow: clip;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: rgba(255, 253, 248, 0.94);
+        box-shadow: var(--shadow);
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid var(--line-soft);
+        background: rgba(255, 253, 248, 0.86);
+        backdrop-filter: blur(18px);
+      }
+
+      .topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 14px 42px;
+      }
+
+      .brand {
+        color: var(--ink);
+        font-size: 0.93rem;
+        font-weight: 760;
+        letter-spacing: -0.02em;
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        font-size: 0.87rem;
+      }
+
+      .nav a {
+        color: var(--muted);
+      }
+
+      .nav a:hover {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      header {
+        border-bottom: 1px solid var(--line-soft);
+        background:
+          linear-gradient(135deg, rgba(229, 241, 238, 0.78), transparent 58%),
+          var(--paper);
+        padding: 56px 58px 48px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 18rem;
+        gap: 48px;
+        align-items: end;
+      }
+
+      .eyebrow {
+        margin-bottom: 14px;
+        color: var(--accent);
+        font-size: 0.78rem;
+        font-weight: 820;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: var(--ink);
+        letter-spacing: -0.035em;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin: 0;
+        font-size: clamp(2.55rem, 5.4vw, 4.9rem);
+        line-height: 0.97;
+      }
+
+      .headline {
+        max-width: 760px;
+        margin: 20px 0 0;
+        color: #40505d;
+        font-size: clamp(1.02rem, 1.7vw, 1.18rem);
+      }
+
+      .contact {
+        border-left: 1px solid var(--line);
+        padding-left: 24px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .contact p {
+        margin: 0 0 8px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 24px;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 2.65rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 0.72rem 1.05rem;
+        font-size: 0.88rem;
+        font-weight: 720;
+        cursor: pointer;
+      }
+
+      .button-primary {
+        border: 1px solid var(--accent);
+        background: var(--accent);
+        color: #fffdf8;
+      }
+
+      .button-primary:hover,
+      .button-secondary:hover {
+        text-decoration: none;
+        filter: brightness(0.98);
+      }
+
+      .button-secondary {
+        border: 1px solid var(--line);
+        background: #fffaf2;
+        color: var(--accent-dark);
+      }
+
+      main {
+        padding: 0 58px 58px;
+      }
+
+      section {
+        position: relative;
+        border-bottom: 1px solid var(--line-soft);
+        padding: 48px 0;
+      }
+
+      section:last-child {
+        border-bottom: 0;
+      }
+
+      section::before {
+        position: absolute;
+        top: -1px;
+        left: 0;
+        width: 78px;
+        height: 1px;
+        background: linear-gradient(90deg, var(--accent), transparent);
+        content: "";
+      }
+
+      .section-grid {
+        display: grid;
+        grid-template-columns: 180px minmax(0, 1fr);
+        gap: 36px;
+      }
+
+      .section-label {
+        padding-top: 7px;
+        color: var(--accent);
+        font-size: 0.76rem;
+        font-weight: 820;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        margin: 0 0 16px;
+        font-size: 1.58rem;
+        line-height: 1.17;
+      }
+
+      h3 {
+        margin: 0 0 6px;
+        font-size: 1.06rem;
+        line-height: 1.25;
+      }
+
+      p {
+        margin: 0 0 12px;
+      }
+
+      .copy {
+        max-width: 790px;
+        color: #4b5b68;
+      }
+
+      .value-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+        margin-top: 20px;
+      }
+
+      .value {
+        display: grid;
+        grid-template-columns: 2rem 1fr;
+        gap: 13px;
+        border: 1px solid var(--line-soft);
+        border-radius: 16px;
+        background: linear-gradient(180deg, #fffdf8, var(--paper-soft));
+        padding: 16px;
+      }
+
+      .value-number {
+        display: inline-flex;
+        width: 1.75rem;
+        height: 1.75rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-size: 0.78rem;
+        font-weight: 840;
+      }
+
+      .value p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.91rem;
+      }
+
+      .note,
+      .thesis {
+        border: 1px solid rgba(31, 111, 115, 0.2);
+        border-radius: 18px;
+        background: var(--accent-soft);
+        color: #234f52;
+      }
+
+      .note {
+        margin-top: 20px;
+        padding: 18px;
+      }
+
+      .note p,
+      .thesis p {
+        margin: 0;
+      }
+
+      .timeline,
+      .project-list,
+      .capability-table {
+        border-top: 1px solid var(--line-soft);
+      }
+
+      .role {
+        display: grid;
+        grid-template-columns: 230px minmax(0, 1fr);
+        gap: 30px;
+        border-bottom: 1px solid var(--line-soft);
+        padding: 28px 0;
+      }
+
+      .role:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .role-meta {
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      .role-meta strong {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--accent);
+        font-size: 0.95rem;
+      }
+
+      .role-content p,
+      li {
+        color: #4b5b68;
+      }
+
+      ul {
+        margin: 10px 0 0;
+        padding-left: 18px;
+      }
+
+      li {
+        margin: 5px 0;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 13px;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #fffaf2;
+        color: #53616c;
+        padding: 4px 8px;
+        font-size: 0.75rem;
+        white-space: nowrap;
+      }
+
+      .project {
+        border-bottom: 1px solid var(--line-soft);
+        padding: 24px 0;
+      }
+
+      .project:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .project-header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 8px;
+      }
+
+      .badge {
+        color: var(--gold);
+        font-size: 0.82rem;
+        font-weight: 820;
+        white-space: nowrap;
+      }
+
+      .capability-table {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 17px;
+        background: #fffaf3;
+      }
+
+      .capability-row {
+        display: grid;
+        grid-template-columns: 230px minmax(0, 1fr);
+        border-bottom: 1px solid var(--line-soft);
+      }
+
+      .capability-row:last-child {
+        border-bottom: 0;
+      }
+
+      .capability-name {
+        border-right: 1px solid var(--line-soft);
+        background: var(--paper-soft);
+        color: var(--accent);
+        font-weight: 780;
+        padding: 14px 16px;
+      }
+
+      .capability-desc {
+        color: #4b5b68;
+        padding: 14px 16px;
+      }
+
+      .thesis {
+        padding: 24px;
+        background:
+          radial-gradient(circle at top left, rgba(31, 111, 115, 0.12), transparent 22rem),
+          #fffdf8;
+      }
+
+      .education-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.66fr);
+        gap: 30px;
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        background: var(--paper-soft);
+        color: var(--muted);
+        padding: 26px 58px 36px;
+        font-size: 0.9rem;
+      }
+
+      .footer-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      @media print {
+        body {
+          background: #fff;
+        }
+
+        .shell {
+          width: 100%;
+          margin: 0;
+          border: 0;
+          border-radius: 0;
+          box-shadow: none;
+        }
+
+        .topbar,
+        .actions {
+          display: none;
+        }
+
+        header,
+        main,
+        footer {
+          padding-left: 28px;
+          padding-right: 28px;
+        }
+
+        section {
+          padding: 28px 0;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .shell {
+          width: min(100% - 20px, var(--max));
+          margin-top: 12px;
+          border-radius: 18px;
+        }
+
+        .topbar-inner,
+        header,
+        main,
+        footer {
+          padding-left: 22px;
+          padding-right: 22px;
+        }
+
+        .nav {
+          display: none;
+        }
+
+        .hero,
+        .section-grid,
+        .value-grid,
+        .role,
+        .capability-row,
+        .education-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .contact {
+          border-top: 1px solid var(--line-soft);
+          border-left: 0;
+          padding-top: 18px;
+          padding-left: 0;
+        }
+
+        .role {
+          gap: 12px;
+        }
+
+        .capability-name {
+          border-right: 0;
+          border-bottom: 1px solid var(--line-soft);
+        }
+
+        .project-header {
+          display: block;
+        }
+
+        .badge {
+          display: block;
+          margin-top: 4px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="shell">
+      <nav class="topbar" aria-label="Navegación principal">
+        <div class="topbar-inner">
+          <a class="brand" href="#top">Jaime Pineda Moreno</a>
+          <div class="nav">
+            {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+          </div>
+        </div>
+      </nav>
+
+      <header id="top">
+        <div class="hero">
+          <div>
+            <div class="eyebrow">CTO Cofounder · Clinical AI & Healthtech</div>
+            <h1>Jaime Pineda Moreno</h1>
+            <p class="headline">
+              Médico de urgencias y científico de datos. Construyo infraestructura clínica, datos e IA aplicadas a medicina personalizada y enfermedad crónica.
+            </p>
+            <div class="actions">
+              <button class="button button-primary" type="button" onclick="window.print()">Guardar como PDF</button>
+              <a class="button button-secondary" href="mailto:jalpimo@gmail.com">Contactar</a>
+            </div>
+          </div>
+
+          <aside class="contact" aria-label="Contacto">
+            <p><strong>Madrid, España</strong></p>
+            <p><a href="mailto:jalpimo@gmail.com">jalpimo@gmail.com</a></p>
+            <p><a href="https://linkedin.com/in/jaimepineda88" target="_blank" rel="noopener noreferrer">linkedin.com/in/jaimepineda88</a></p>
+            <p><a href="https://drjaime.rizomahealth.com" target="_blank" rel="noopener noreferrer">drjaime.rizomahealth.com</a></p>
+          </aside>
+        </div>
+      </header>
+
+      <main>
+        <section id="perfil">
+          <div class="section-grid">
+            <div class="section-label">Perfil</div>
+            <div>
+              <h2>Perfil híbrido médico-técnico para construir producto clínico real.</h2>
+              <p class="copy">
+                Médico de urgencias y científico de datos, con trayectoria clínica desde 2016 y tres años construyendo sistemas de IA, datos clínicos e interoperabilidad sanitaria. Combino práctica asistencial con trabajo aplicado en modelos predictivos, pipelines clínicos, arquitecturas FHIR/OMOP, agentes y workflows con LLMs.
+              </p>
+              <p class="copy">
+                Mi diferencial es traducir complejidad clínica en producto digital seguro y escalable. Para Senda Health aporto criterio clínico en obesidad y enfermedad crónica, visión de producto AI-first, sensibilidad regulatoria y capacidad de dirigir la evolución del stack desde un MVP operativo hacia una plataforma clínica longitudinal preparada para escalar.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="senda">
+          <div class="section-grid">
+            <div class="section-label">Senda Health</div>
+            <div>
+              <h2>Propuesta de valor específica.</h2>
+              <div class="value-grid">
+                {valueItems.map((item, index) => (
+                  <article class="value">
+                    <div class="value-number">{index + 1}</div>
+                    <div>
+                      <h3>{item.title}</h3>
+                      <p>{item.text}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+
+              <div class="note">
+                <p>
+                  El foco no es “añadir IA” a un proceso clínico, sino diseñar una infraestructura asistencial longitudinal donde datos, seguimiento, seguridad, interoperabilidad y personalización terapéutica estén conectados desde el inicio.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="experiencia">
+          <div class="section-grid">
+            <div class="section-label">Experiencia</div>
+            <div>
+              <h2>Experiencia relevante.</h2>
+              <div class="timeline">
+                {roles.map((role) => (
+                  <article class="role">
+                    <div class="role-meta">
+                      <strong>{role.company}</strong>
+                      {role.role}<br />
+                      {role.meta}
+                    </div>
+                    <div class="role-content">
+                      <p>{role.body}</p>
+                      <ul>
+                        {role.bullets.map((bullet) => <li>{bullet}</li>)}
+                      </ul>
+                      <div class="tags">
+                        {role.tags.map((tag) => <span class="tag">{tag}</span>)}
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="proyectos">
+          <div class="section-grid">
+            <div class="section-label">Proyectos</div>
+            <div>
+              <h2>Proyectos Healthtech / IA seleccionados.</h2>
+              <div class="project-list">
+                {projects.map((project) => (
+                  <article class="project">
+                    <div class="project-header">
+                      <h3>{project.title}</h3>
+                      <span class="badge">{project.badge}</span>
+                    </div>
+                    <p class="copy">{project.text}</p>
+                    {'bullets' in project && project.bullets && (
+                      <ul>
+                        {project.bullets.map((bullet) => <li>{bullet}</li>)}
+                      </ul>
+                    )}
+                    {'tags' in project && project.tags && (
+                      <div class="tags">
+                        {project.tags.map((tag) => <span class="tag">{tag}</span>)}
+                      </div>
+                    )}
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="capacidades">
+          <div class="section-grid">
+            <div class="section-label">Capacidades</div>
+            <div>
+              <h2>Capacidades clave.</h2>
+              <div class="capability-table">
+                {capabilities.map(([name, description]) => (
+                  <div class="capability-row">
+                    <div class="capability-name">{name}</div>
+                    <div class="capability-desc">{description}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-grid">
+            <div class="section-label">Tesis CTO</div>
+            <div class="thesis">
+              <h2>En salud digital, la ventaja no está solo en la tecnología disponible, sino en cómo se implementa.</h2>
+              <p>
+                La plataforma debe nacer con una capa longitudinal de datos, workflows clínicos claros, supervisión médica, evaluación semántica y una arquitectura preparada para interoperar, auditar y escalar. Mi referencia es construir con visión de futuro: seguridad, trazabilidad, gobernanza e interoperabilidad como decisiones de producto desde el inicio, no como correcciones tardías.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="formacion">
+          <div class="section-grid">
+            <div class="section-label">Formación</div>
+            <div class="education-grid">
+              <div>
+                <h2>Formación.</h2>
+                <ul>
+                  {education.map((item) => <li><strong>{item.split(' — ')[0]}</strong> — {item.split(' — ')[1]}</li>)}
+                </ul>
+              </div>
+              <div>
+                <h2>Idiomas.</h2>
+                <ul>
+                  <li><strong>Español:</strong> nativo.</li>
+                  <li><strong>Inglés:</strong> profesional funcional. Trabajo a diario con equipo internacional distribuido y documentación técnica en inglés. En mejora activa hacia fluidez plena.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="footer-grid">
+          <div>
+            <strong>Jaime Pineda Moreno</strong><br />
+            Médico de urgencias · Clinical AI & Healthtech Builder
+          </div>
+          <div>
+            Madrid · <a href="mailto:jalpimo@gmail.com">jalpimo@gmail.com</a> ·
+            <a href="https://linkedin.com/in/jaimepineda88" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
