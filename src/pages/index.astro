@@ -175,6 +175,7 @@ const education = [
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary" />
     <title>{pageTitle}</title>
+    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
     <style>
       :root {
         color-scheme: light;
@@ -633,35 +634,6 @@ const education = [
         }
       }
 
-      @media print {
-        body {
-          background: #fff;
-        }
-
-        .shell {
-          width: 100%;
-          margin: 0;
-          border: 0;
-          border-radius: 0;
-          box-shadow: none;
-        }
-
-        .topbar,
-        .actions {
-          display: none;
-        }
-
-        header,
-        main,
-        footer {
-          padding-left: 28px;
-          padding-right: 28px;
-        }
-
-        section {
-          padding: 28px 0;
-        }
-      }
 
       @media (max-width: 900px) {
         .shell {
@@ -739,7 +711,7 @@ const education = [
               Médico de urgencias y científico de datos. Construyo infraestructura clínica, datos e IA aplicadas a medicina personalizada y enfermedad crónica.
             </p>
             <div class="actions">
-              <button class="button button-primary" type="button" onclick="window.print()">Guardar como PDF</button>
+              <a class="button button-primary" href={`${import.meta.env.BASE_URL}Jaime_Pineda_CV_SendaHealth_CTO.pdf`} download="Jaime_Pineda_CV_SendaHealth_CTO.pdf">Descargar CV (PDF)</a>
               <a class="button button-secondary" href="mailto:jalpimo@gmail.com">Contactar</a>
             </div>
           </div>
@@ -748,7 +720,7 @@ const education = [
             <p><strong>Madrid, España</strong></p>
             <p><a href="mailto:jalpimo@gmail.com">jalpimo@gmail.com</a></p>
             <p><a href="https://linkedin.com/in/jaimepineda88" target="_blank" rel="noopener noreferrer">linkedin.com/in/jaimepineda88</a></p>
-            <p><a href="https://drjaime.rizomahealth.com" target="_blank" rel="noopener noreferrer">drjaime.rizomahealth.com</a></p>
+            <p><a href="https://aiojpineda.github.io/cv-jpineda/" target="_blank" rel="noopener noreferrer">aiojpineda.github.io/cv-jpineda</a></p>
           </aside>
         </div>
       </header>
@@ -918,5 +890,17 @@ const education = [
         </div>
       </footer>
     </div>
+    <elevenlabs-convai
+      agent-id="0cTrsdPxcU8RwXd0HBjF"
+      dismissible="true"
+      override-language="es"
+      avatar-orb-color-1="#1f6f73"
+      avatar-orb-color-2="#967842"
+      action-text="Habla con Jaime"
+      start-call-text="Iniciar conversación"
+      end-call-text="Finalizar"
+      listening-text="Escuchando..."
+      speaking-text="Respondiendo..."
+    ></elevenlabs-convai>
   </body>
 </html>
